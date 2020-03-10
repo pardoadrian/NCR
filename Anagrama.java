@@ -25,13 +25,11 @@ public class Anagrama {
 				
 		for (int i = 0; i <= M - N; i++) {
 			
-			
-			
-            if (comparar(ordenar(cadena.substring(i, i + N).toLowerCase()), subcadena)){
+            		if (comparar(ordenar(cadena.substring(i, i + N).toLowerCase()), subcadena)){
             	
-            	cantidadAnagramas++;
+            		cantidadAnagramas++;
             	
-            }
+            	}
         }
 		
         return cantidadAnagramas;
