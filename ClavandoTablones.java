@@ -3,7 +3,7 @@ package ncr;
 public class ClavandoTablones {
 
 	
-	public int solution(int A[] , int B[], short N, int C[], short M) {
+	public int solution(int A[] , int B[], short maximoNumeroClavos, int C[], short maximoNumeroTablas) {
 		
 		
 		short k = 0;//indice de vector que contiene posiciones de inicio de tabla en 
@@ -13,7 +13,7 @@ public class ClavandoTablones {
 		
 			
 		//mientras haya tablas restantes y queden clavos por probar
-		while(hayTablasRestantes(k,M) && i < N) {
+		while(hayTablasRestantes(k,maximoNumeroTablas) && i < maximoNumeroClavos) {
 				
 				
 				if(estaDentroDeIntervalo(A[k],B[k],C[i])) {
@@ -29,7 +29,7 @@ public class ClavandoTablones {
 		
 		//si hay tablas restantes y no quedan clavos por probar, devuelvo -1. Caso contrario, no hay tablas restantes y 
 		//devuelvo contador
-		if (i == N) return -1;
+		if (i == maximoNumeroClavos) return -1;
 		else return ++i;
 			
 		
@@ -46,9 +46,9 @@ public class ClavandoTablones {
 		
 	}
 	
-	private boolean hayTablasRestantes(int k,  int M) {
+	private boolean hayTablasRestantes(int k,  short maximoNumeroTablas) {
 		
-		if( k<M ) {
+		if( k<maximoNumeroTablas ) {
 			return true;
 		}else {
 			return false;
