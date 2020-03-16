@@ -9,11 +9,11 @@ public class Anagrama {
 		
 		
 		
-		int M = cadena.length();
-		int N = subcadena.length();
+		int tamanoCadena = cadena.length();
+		int tamanoSubcadena = subcadena.length();
 		int cantidadAnagramas = 0;
 		
-		if (N > M) {
+		if (tamanoSubcadena > tamanoCadena) {
 			System.out.println("Error: longitud de subcadena no debe ser mayor a longitud de cadena");
 			return -1;
 		}
@@ -23,7 +23,7 @@ public class Anagrama {
 		subcadena = ordenar(subcadena.toLowerCase());
 		
 				
-		for (int i = 0; i <= M - N; i++) {
+		for (int i = 0; i <= tamanoCadena - tamanoSubcadena; i++) {
 			
             		if (comparar(ordenar(cadena.substring(i, i + N).toLowerCase()), subcadena)){
             	
@@ -40,10 +40,10 @@ public class Anagrama {
 
 	private String ordenar(String str) {
 
-		char[] array = str.toCharArray();
-		Arrays.sort(array);
+		char[] caracteresOrdenados = str.toCharArray();
+		Arrays.sort(caracteresOrdenados);
 
-		return new String(array);
+		return new String(caracteresOrdenados);
 
 	}
 
